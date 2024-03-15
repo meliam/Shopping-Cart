@@ -7,7 +7,7 @@ RUN pip install flake8 pytest
 COPY . .
 
 # Stage 2: Create Production Image with Nginx
-FROM nginx:latest
+FROM nginx
 COPY --from=builder /shopping-cart /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
