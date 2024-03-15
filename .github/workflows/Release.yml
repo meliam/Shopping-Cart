@@ -17,6 +17,6 @@ jobs:
     
     steps:
     - uses: actions/checkout@v4
-    -  run: docker build  .
+    -  run: docker build -t meliam/shopcart-app:2.0 .
     -  run: echo "${{secrets.DOCKERHUB_TOKEN}}" | docker login -u ${{secrets.DOCKERHUB_USERNAME}} --password-stdin
     -  run: docker push meliam/shopcart-app
