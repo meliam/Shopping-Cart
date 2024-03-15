@@ -8,6 +8,6 @@ COPY . .
 
 # Stage 2: Create Production Image with Nginx
 FROM nginx:latest
-COPY --from=builder /webscrapping-1 /usr/share/nginx/html
+COPY --from=builder /shopping-cart /usr/share/nginx/html
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
